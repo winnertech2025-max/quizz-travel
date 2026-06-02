@@ -17,7 +17,7 @@ export function Navbar({ activePage, onNavigate }) {
   return (
     <header className="navbar">
       <button className="brand" onClick={() => handleNavigate("home")} aria-label="Go to home">
-        <span className="brand-mark"><Compass size={22} /></span>
+         <img src="/logoKorean.png" alt="Find Your Daejeon Logo" style={{width:'14%'}}/>
         <span>
           <strong>Find Your Daejeon</strong>
           <small>Travel quiz for new arrivals</small>
