@@ -1,9 +1,10 @@
 export function scorePlace(place, answers) {
   const selectedTags = [answers.preference, answers.companion, answers.budget].filter(Boolean);
-  const categoryScore = place.category === answers.category ? 12 : place.tags.includes(answers.preference) ? 2 : -6;
+  const categoryScore = place.category === answers.category ? 10 : place.tags.includes(answers.preference) ? 1 : -8;
+  const preferenceScore = answers.preference && place.tags.includes(answers.preference) ? 7 : 0;
   const tagScore = selectedTags.reduce((score, tag) => score + (place.tags.includes(tag) ? 3 : 0), 0);
   const mustVisitBonus = answers.category === "mustVisit" && place.category === "mustVisit" ? 4 : 0;
-  return categoryScore + tagScore + mustVisitBonus;
+  return categoryScore + preferenceScore + tagScore + mustVisitBonus;
 }
 
 export function getRecommendations(places, answers) {

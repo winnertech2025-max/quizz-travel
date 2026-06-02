@@ -2021,10 +2021,14 @@ h2 {
 
 .place-document-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   padding: 10px;
   background: rgba(7, 31, 47, 0.035);
+}
+
+.place-document-gallery.single {
+  grid-template-columns: 1fr;
 }
 
 .place-document-gallery img {
@@ -2032,6 +2036,10 @@ h2 {
   height: clamp(140px, 18vw, 220px);
   object-fit: cover;
   border-radius: 6px;
+}
+
+.place-document-gallery.single img {
+  height: clamp(220px, 30vw, 360px);
 }
 
 .place-document-body,

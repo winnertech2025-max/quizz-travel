@@ -27,6 +27,12 @@ export const places = [
     sourceName: source.dining,
     sourceUrl: "https://www.diningcode.com/profile.php?rid=ObcmAoIgn2uU",
     image: "https://d12zq4w4guyljn.cloudfront.net/750_750_20250607063833_photo1_ff1d1f3508f7.webp",
+    gallery: [
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20250607063833_photo1_ff1d1f3508f7.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20250607063833_photo2_ff1d1f3508f7.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20250607063833_photo3_ff1d1f3508f7.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20241107123324_photo2_fa7cece49c4a.webp"
+    ],
     description: "A real Cong Caphe branch in Doryong-dong, listed by DiningCode as a Vietnamese cafe known for coconut smoothie coffee.",
     details: [
       "DiningCode lists the address as Doryong-dong 4-9 in Yuseong-gu.",
@@ -47,6 +53,11 @@ export const places = [
     sourceName: source.dining,
     sourceUrl: "https://www.diningcode.com/profile.php?rid=Wxmv9JShWACk",
     image: "https://d12zq4w4guyljn.cloudfront.net/750_750_20251006011707966_photo_16ac5c698b06.webp",
+    gallery: [
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20251006011707966_photo_16ac5c698b06.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20251006011708963_photo_16ac5c698b06.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/20251006011716807_menu_16ac5c698b06.webp"
+    ],
     description: "A verified Daeheung-dong cafe listed by DiningCode with regular coffee and drip coffee menu items.",
     details: [
       "DiningCode lists the address as Daeheung-dong 487-1 in Jung-gu.",
@@ -68,6 +79,12 @@ export const places = [
     sourceName: source.dining,
     sourceUrl: "https://www.diningcode.com/profile.php?rid=w6THXSDWun9B",
     image: "https://d12zq4w4guyljn.cloudfront.net/300_300_20240918115406_photo1_14cf6acb6ed9.webp",
+    gallery: [
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20240918115406_photo1_14cf6acb6ed9.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20240918115406_photo2_14cf6acb6ed9.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20240918115406_photo3_14cf6acb6ed9.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20221219012952_photo1_f68a0699b1ff.webp"
+    ],
     description: "A real kalguksu restaurant in Seokgyo-dong, matched by DiningCode to the exact address provided by the project brief.",
     details: [
       "DiningCode lists this Hongduggaekalguksu branch at Seokgyo-dong 10-17.",
@@ -88,6 +105,12 @@ export const places = [
     sourceName: source.dining,
     sourceUrl: "https://www.diningcode.com/profile.php?rid=4f9ibT2s1L8T",
     image: "https://d12zq4w4guyljn.cloudfront.net/750_750_20251028015654132_photo_2ad306c99c9f.webp",
+    gallery: [
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20251028015654132_photo_2ad306c99c9f.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20251028015654315_photo_2ad306c99c9f.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20251028015654554_photo_2ad306c99c9f.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20251028015654763_photo_2ad306c99c9f.webp"
+    ],
     description: "A verified Bomunsan-area shabu-shabu restaurant listed by DiningCode at Daesa-dong 197-15.",
     details: [
       "DiningCode lists Uccine Kitchen as a shabu-shabu and mushroom restaurant.",
@@ -108,6 +131,9 @@ export const places = [
     sourceName: source.naver,
     sourceUrl: naverQuery("성심당 본점"),
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Sungsimdang_2019.jpg",
+    gallery: [
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Sungsimdang_2019.jpg"
+    ],
     description: "Daejeon's landmark bakery, widely associated with the city and best treated as a food-culture must-visit.",
     details: [
       "The app uses the main-store address at Daejong-ro 480beon-gil in Jung-gu.",
@@ -154,6 +180,12 @@ export const places = [
     sourceName: source.ktour,
     sourceUrl: "https://www.ktourmap.com/spotDetails.jsp?contentId=126838",
     image: ktoImage("87/3569387_image2_1.jpg"),
+    gallery: [
+      ktoImage("87/3569387_image2_1.jpg"),
+      ktoImage("81/3569381_image2_1.jpg"),
+      ktoImage("82/3569382_image2_1.jpg"),
+      ktoImage("84/3569384_image2_1.jpg")
+    ],
     description: "A family-friendly theme park in Chimsan-dong built around Korean surnames, genealogy, and filial piety.",
     details: [
       "KTourMap says the park opened in 1997 and includes surname-symbol sculptures, the Korean Genealogy Museum, and visitor facilities.",
@@ -174,6 +206,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Gate,_bridge,_and_tower_at_Daejeon_Expo_Science_Park.jpg",
     image: commonsImage("Gate, bridge, and tower at Daejeon Expo Science Park.jpg"),
+    gallery: [
+      commonsImage("Gate, bridge, and tower at Daejeon Expo Science Park.jpg")
+    ],
     description: "A science landmark area connected to Daejeon's 1993 Expo legacy, Hanbit Tower, and the Expo Bridge route.",
     details: [
       "The app treats the Expo district as the strongest Science & Technology quiz match in Daejeon.",
@@ -219,6 +254,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Gyejoksan",
     image: localImage("gyejoksan-forest-walk.png"),
+    gallery: [
+      localImage("gyejoksan-forest-walk.png")
+    ],
     description: "A forest route around Gyejoksan, best known locally for red-clay walking paths and mountain scenery.",
     details: [
       "Wikimedia Commons identifies Gyejoksan as a mountain in Daejeon and includes Daejeon cityscape and fortress media from the area.",
@@ -289,6 +327,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Daejeon_Dulesangil",
     image: localImage("daejeon-dullesan-road.png"),
+    gallery: [
+      localImage("daejeon-dullesan-road.png")
+    ],
     description: "Living in Daejeon describes Dullesan Road as a walking and hiking trail connecting the mountains surrounding Daejeon.",
     details: [
       "Wikimedia Commons identifies Daejeon Dulesangil as the circular mountain trail around Daejeon.",
@@ -309,6 +350,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Dongchundang",
     image: localImage("dongchundang.png"),
+    gallery: [
+      localImage("dongchundang.png")
+    ],
     description: "Living in Daejeon says Dongchundang was built in the traditional architectural style in the mid-Joseon period.",
     details: [
       "Official category source: Daejeon Attractions, Cultural History.",
@@ -329,6 +373,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Daejeon_Museum_of_Art",
     image: commonsImage("Daejeon Museum of Art in South Korea 01.jpg"),
+    gallery: [
+      commonsImage("Daejeon Museum of Art in South Korea 01.jpg")
+    ],
     description: "Living in Daejeon describes this complex as including Daejeon Culture and Arts Center, City Museum of Art, and Lee Ungno Museum of Art.",
     details: [
       "Official category source: Daejeon Attractions, Cultural History.",
@@ -374,6 +421,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Expo_Bridge_Daejeon_at_night.jpg",
     image: commonsImage("Expo Bridge Daejeon at night.jpg"),
+    gallery: [
+      commonsImage("Expo Bridge Daejeon at night.jpg")
+    ],
     description: "A signature Daejeon night-view bridge route with city lights, river reflections, and a direct connection to the Expo district.",
     details: [
       "Wikimedia Commons hosts a public-domain night photograph of Expo Bridge in Daejeon.",
@@ -394,6 +444,9 @@ export const places = [
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Daedong_Sky_Park_Windmill.jpg",
     image: commonsImage("Daedong Sky Park Windmill.jpg"),
+    gallery: [
+      commonsImage("Daedong Sky Park Windmill.jpg")
+    ],
     description: "A hilltop park near Daejeon Station known for its windmill sculpture, mural-village feeling, and city-view photo spots.",
     details: [
       "Wikimedia Commons identifies the image as the windmill sculpture at Daedong Sky Park in Daejeon.",
@@ -406,7 +459,7 @@ export const places = [
     name: "Daejeon Shinsegae Art & Science",
     koreanName: "대전신세계 Art & Science",
     category: "nightlife",
-    tags: ["Cocktail & Lounge", "Night Walk & City Lights", "Friends", "Partner", "Family", "Moderate", "Premium", "Science & Technology"],
+    tags: ["Friends", "Partner", "Family", "Moderate", "Premium", "Science & Technology"],
     address: "1 Expo-ro, Yuseong-gu, Daejeon",
     lat: 36.3754,
     lng: 127.3819,
@@ -427,23 +480,27 @@ export const places = [
     ]
   },
   {
-    id: "yuseong-hot-spring-district",
-    name: "Yuseong Hot Spring District",
-    koreanName: "유성온천지구",
+    id: "el-mariachi",
+    name: "EL Mariachi",
+    koreanName: "엘 마리아치",
     category: "nightlife",
-    tags: ["Casual Drinks", "Night Walk & City Lights", "Relax & Nature", "Alone", "Friends", "Partner", "Budget-friendly", "Moderate"],
-    address: "Yuseong Hot Spring district, Yuseong-gu, Daejeon",
-    lat: 36.354,
-    lng: 127.3419,
-    naverUrl: naverQuery("유성온천지구"),
-    sourceName: source.ktour,
-    sourceUrl: "https://www.ktourmap.com/spotDetails.jsp?contentId=125858",
-    image: ktoImage("42/3035142_image2_1.JPG"),
-    description: "A large historic hot-spring tourism district around Yuseong, useful for an easy evening walk, foot bath, or casual local route.",
+    tags: ["Cocktail & Lounge", "Casual Drinks", "Friends", "Partner", "Moderate", "Premium"],
+    address: "405-20 Gung-dong, Yuseong-gu, Daejeon",
+    roadAddress: "98 Gungdong-ro 18beon-gil, Yuseong-gu, Daejeon",
+    lat: 36.3621801,
+    lng: 127.3516605,
+    naverUrl: naverQuery("EL Mariachi 대전 궁동"),
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=lIReKkftqUbd",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=lIReKkftqUbd",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=lIReKkftqUbd"
+    ],
+    description: "A real Gung-dong cocktail bar listed by DiningCode as EL Mariachi, with late-night opening hours and a dark, relaxed bar atmosphere.",
     details: [
-      "KTourMap describes Yuseong Hot Spring District as one of Korea's oldest and largest hot-spring tourism areas.",
-      "Best for users who want a low-pressure evening rather than a loud nightlife plan.",
-      "Open Naver Maps to choose the exact foot bath, hotel bath, restaurant, or cafe around the district."
+      "DiningCode lists EL Mariachi at Gung-dong 405-20 in Yuseong-gu.",
+      "The source categorizes it as a cocktail and cocktail bar spot, with hours from 20:00 to 02:00 on weekdays and later weekend hours.",
+      "Best for users who choose Cocktail & Lounge or Casual Drinks rather than a sightseeing-only night route."
     ]
   },
   {

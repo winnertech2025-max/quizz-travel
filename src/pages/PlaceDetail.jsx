@@ -3,6 +3,8 @@ import { handlePlaceImageError } from "../utils/images.js";
 import { naverSearchUrl } from "../utils/recommendations.js";
 
 export function PlaceDetail({ place, onBack }) {
+  const galleryImages = Array.from(new Set([...(place.gallery || []), place.image].filter(Boolean)));
+
   return (
     <main className="place-detail-page detail-document-page">
       <button className="detail-back" onClick={onBack}>
@@ -19,9 +21,12 @@ export function PlaceDetail({ place, onBack }) {
           </div>
         </header>
 
-        {place.gallery?.length > 1 && (
-          <div className="place-document-gallery" aria-label={`${place.name} photo gallery`}>
-            {place.gallery.slice(0, 3).map((image, index) => (
+        {galleryImages.length > 0 && (
+          <div
+            className={`place-document-gallery ${galleryImages.length === 1 ? "single" : ""}`}
+            aria-label={`${place.name} photo gallery`}
+          >
+            {galleryImages.slice(0, 4).map((image, index) => (
               <img
                 key={image}
                 src={image}
