@@ -4,6 +4,8 @@ import { MapPanel } from "../components/MapPanel.jsx";
 import { PlaceCard } from "../components/PlaceCard.jsx";
 import { places } from "../data/places.js";
 import { quizFlow } from "../data/quiz.js";
+import { PlaceDetail } from "./PlaceDetail.jsx";
+import { handlePlaceImageError } from "../utils/images.js";
 import { getRecommendations } from "../utils/recommendations.js";
 
 const steps = ["category", "preference", "companion", "budget"];
@@ -13,6 +15,7 @@ export function Quiz() {
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
   const [userLocation, setUserLocation] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   const currentStep = steps[step];
   const question = getQuestion(currentStep, answers.category);
@@ -38,17 +41,23 @@ export function Quiz() {
   const resetQuiz = () => {
     setAnswers({});
     setShowResults(false);
+    setSelectedPlace(null);
     setStep(0);
   };
 
   const goBack = () => {
     if (showResults) {
+      setSelectedPlace(null);
       setShowResults(false);
       setStep(steps.length - 1);
       return;
     }
     setStep((value) => Math.max(0, value - 1));
   };
+
+  if (selectedPlace) {
+    return <PlaceDetail place={selectedPlace} onBack={() => setSelectedPlace(null)} />;
+  }
 
   const detectForCards = () => {
     if (!navigator.geolocation) return;
@@ -82,7 +91,7 @@ export function Quiz() {
         </section>
 
         <div className="reveal-up delay-2">
-          <MapPanel places={recommendations} />
+          <MapPanel places={recommendations} onViewDetails={setSelectedPlace} />
         </div>
 
         <div className="section-heading reveal-up delay-3">
@@ -92,7 +101,7 @@ export function Quiz() {
         <section className="places-grid">
           {recommendations.map((place, index) => (
             <div className="place-card-motion" style={{ "--delay": `${index * 80}ms` }} key={place.id}>
-              <PlaceCard place={place} userLocation={userLocation} />
+              <PlaceCard place={place} userLocation={userLocation} onViewDetails={setSelectedPlace} />
             </div>
           ))}
         </section>
@@ -112,7 +121,7 @@ export function Quiz() {
           <div className="spotlight-stack">
             {spotlightPlaces.map((place, index) => (
               <article key={place.id} style={{ "--delay": `${index * 120}ms` }}>
-                <img src={place.image} alt={place.name} />
+                <img src={place.image} alt={place.name} onError={handlePlaceImageError} />
                 <div>
                   <span>{place.koreanName}</span>
                   <strong>{place.name}</strong>

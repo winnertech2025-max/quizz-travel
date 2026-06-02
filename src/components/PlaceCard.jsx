@@ -1,12 +1,13 @@
-import { ExternalLink, MapPin, WalletCards } from "lucide-react";
+import { ExternalLink, Info, MapPin, WalletCards } from "lucide-react";
+import { handlePlaceImageError } from "../utils/images.js";
 import { distanceInKm, naverSearchUrl } from "../utils/recommendations.js";
 
-export function PlaceCard({ place, userLocation }) {
+export function PlaceCard({ place, userLocation, onViewDetails }) {
   const distance = distanceInKm(userLocation, place);
 
   return (
     <article className="place-card">
-      <img src={place.image} alt={place.name} />
+      <img src={place.image} alt={place.name} onError={handlePlaceImageError} />
       <div className="place-card-body">
         <div>
           <p className="eyebrow">{place.koreanName}</p>
@@ -25,9 +26,14 @@ export function PlaceCard({ place, userLocation }) {
           ))}
         </div>
 
-        <a className="naver-button" href={naverSearchUrl(place)} target="_blank" rel="noreferrer">
-          Open in Naver Maps <ExternalLink size={16} />
-        </a>
+        <div className="place-actions">
+          <button className="detail-button" onClick={() => onViewDetails?.(place)}>
+            View details <Info size={16} />
+          </button>
+          <a className="naver-button" href={naverSearchUrl(place)} target="_blank" rel="noreferrer">
+            Naver Maps <ExternalLink size={16} />
+          </a>
+        </div>
       </div>
     </article>
   );

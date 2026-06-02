@@ -7,9 +7,15 @@ import {
   MapPinned,
   Moon,
   Sparkles,
+  Landmark,
+  Search,
   Trees,
   Utensils
 } from "lucide-react";
+import { useMemo, useState } from "react";
+import { places } from "../data/places.js";
+import { handlePlaceImageError } from "../utils/images.js";
+import { naverSearchUrl } from "../utils/recommendations.js";
 
 const categories = [
   {
@@ -31,6 +37,11 @@ const categories = [
     icon: Moon,
     title: "Nightlife",
     text: "Downtown lights, casual drinks, karaoke streets, lounge areas, and night-view routes."
+  },
+  {
+    icon: Landmark,
+    title: "Must-Visit",
+    text: "Skyroad, Sungsimdang, science museums, landmarks, markets, and iconic first-time stops."
   }
 ];
 
@@ -41,7 +52,28 @@ const journey = [
   "Open your matched route on the interactive map"
 ];
 
+const filters = [
+  { value: "all", label: "All" },
+  { value: "cafe", label: "Cafe" },
+  { value: "food", label: "Food" },
+  { value: "nature", label: "Relax" },
+  { value: "nightlife", label: "Nightlife" },
+  { value: "mustVisit", label: "Must-Visit" }
+];
+
 export function Home({ onStartQuiz }) {
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
+  const featuredPlaces = useMemo(() => {
+    return places
+      .filter((place) => activeFilter === "all" || place.category === activeFilter)
+      .filter((place) => {
+        const value = `${place.name} ${place.koreanName} ${place.tags.join(" ")} ${place.description}`.toLowerCase();
+        return value.includes(searchTerm.toLowerCase());
+      })
+      .slice(0, 9);
+  }, [activeFilter, searchTerm]);
+
   return (
     <main>
       <section className="hero home-hero-deluxe">
@@ -65,6 +97,7 @@ export function Home({ onStartQuiz }) {
             <small>Food</small>
             <small>Nature</small>
             <small>Nightlife</small>
+            <small>Visit</small>
           </div>
         </div>
       </section>
@@ -131,6 +164,50 @@ export function Home({ onStartQuiz }) {
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Daejeon%20Skyline.JPG" alt="Daejeon skyline" />
         <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=900&q=80" alt="Korean cafe table" />
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Expo%20Bridge%20Daejeon%20at%20night.jpg" alt="Expo Bridge in Daejeon at night" />
+      </section>
+
+      <section className="home-section featured-places-section">
+        <div className="featured-heading">
+          <div>
+            <p className="eyebrow">Featured places</p>
+            <h2>Browse Daejeon before the quiz chooses for you.</h2>
+          </div>
+          <label className="featured-search">
+            <Search size={18} />
+            <input
+              type="search"
+              placeholder="Search cafes, parks, food, landmarks..."
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+            />
+          </label>
+        </div>
+
+        <div className="featured-filters" aria-label="Filter featured places">
+          {filters.map((filter) => (
+            <button
+              key={filter.value}
+              className={activeFilter === filter.value ? "active" : ""}
+              onClick={() => setActiveFilter(filter.value)}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="featured-grid">
+          {featuredPlaces.map((place) => (
+            <article key={place.id} className="featured-card">
+              <img src={place.image} alt={place.name} onError={handlePlaceImageError} />
+              <div>
+                <span>{place.koreanName}</span>
+                <h3>{place.name}</h3>
+                <p>{place.description}</p>
+                <a href={naverSearchUrl(place)} target="_blank" rel="noreferrer">View on Naver</a>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="home-section map-story">

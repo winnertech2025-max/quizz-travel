@@ -20,7 +20,7 @@ export function Navbar({ activePage, onNavigate }) {
       <button className="brand" onClick={() => handleNavigate("home")} aria-label="Go to home">
         <span className="brand-mark"><Compass size={22} /></span>
         <span>
-          <strong>Daejeon Discovery</strong>
+          <strong>Find Your Daejeon</strong>
           <small>Travel quiz for new arrivals</small>
         </span>
       </button>

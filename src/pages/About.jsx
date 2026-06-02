@@ -21,7 +21,7 @@ export function About() {
         <p className="eyebrow">About the project</p>
         <h1>A practical city guide for people who just arrived.</h1>
         <p>
-          Daejeon Discovery is a React website for a course project. It uses a quiz-based recommendation
+          Find Your Daejeon is a React website for a course project. It uses a quiz-based recommendation
           model to turn vague travel needs into clear places to visit around Daejeon.
         </p>
       </section>

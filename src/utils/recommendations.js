@@ -1,17 +1,28 @@
 export function scorePlace(place, answers) {
   const selectedTags = [answers.preference, answers.companion, answers.budget].filter(Boolean);
-  const categoryScore = place.category === answers.category ? 8 : place.tags.includes(answers.preference) ? 4 : 0;
+  const categoryScore = place.category === answers.category ? 12 : place.tags.includes(answers.preference) ? 2 : -6;
   const tagScore = selectedTags.reduce((score, tag) => score + (place.tags.includes(tag) ? 3 : 0), 0);
-  const mustVisitBonus = answers.category === "mustVisit" && place.category === "mustVisit" ? 2 : 0;
+  const mustVisitBonus = answers.category === "mustVisit" && place.category === "mustVisit" ? 4 : 0;
   return categoryScore + tagScore + mustVisitBonus;
 }
 
 export function getRecommendations(places, answers) {
-  return places
+  const ranked = places
     .map((place) => ({ ...place, score: scorePlace(place, answers) }))
     .filter((place) => place.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 6);
+    .sort((a, b) => b.score - a.score);
+
+  const primary = ranked.filter((place) => place.category === answers.category);
+  const fallback = ranked.filter((place) => place.category !== answers.category);
+  const merged = [];
+
+  [...primary, ...fallback].forEach((place) => {
+    if (!merged.some((existing) => existing.id === place.id)) {
+      merged.push(place);
+    }
+  });
+
+  return merged.slice(0, 6);
 }
 
 export function distanceInKm(origin, destination) {

@@ -1,10 +1,11 @@
-import { LocateFixed, Navigation } from "lucide-react";
+import { ExternalLink, Info, LocateFixed, Navigation } from "lucide-react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { FALLBACK_PLACE_IMAGE, handlePlaceImageError } from "../utils/images.js";
 import { distanceInKm, naverSearchUrl } from "../utils/recommendations.js";
 
-export function MapPanel({ places }) {
+export function MapPanel({ places, onViewDetails }) {
   const mapRef = useRef(null);
   const mapInstanceRef = useRef(null);
   const placeLayerRef = useRef(null);
@@ -64,10 +65,15 @@ export function MapPanel({ places }) {
 
       marker.bindPopup(`
         <article class="leaflet-place-popup">
+          <img src="${place.image}" alt="${place.name}" onerror="this.onerror=null;this.src='${FALLBACK_PLACE_IMAGE}'" />
           <strong>${place.name}</strong>
           <span>${place.koreanName}</span>
-          <p>${place.address}</p>
-          <a href="${naverSearchUrl(place)}" target="_blank" rel="noreferrer">Open in Naver Maps</a>
+          <p>${place.description}</p>
+          <small>${place.address}</small>
+          <div class="leaflet-popup-actions">
+            <button type="button" data-place-id="${place.id}">View details</button>
+            <a href="${naverSearchUrl(place)}" target="_blank" rel="noreferrer">Naver Maps</a>
+          </div>
         </article>
       `);
       marker.addTo(layer);
@@ -76,11 +82,26 @@ export function MapPanel({ places }) {
     layer.addTo(map);
     placeLayerRef.current = layer;
 
+    const handlePopupOpen = (event) => {
+      const button = event.popup.getElement()?.querySelector("[data-place-id]");
+      if (!button) return;
+      button.addEventListener("click", () => {
+        const selected = places.find((place) => place.id === button.dataset.placeId);
+        if (selected) onViewDetails?.(selected);
+      });
+    };
+
+    map.on("popupopen", handlePopupOpen);
+
     const bounds = L.latLngBounds(places.map((place) => [place.lat, place.lng]));
     if (bounds.isValid()) {
       map.fitBounds(bounds, { padding: [42, 42], maxZoom: 14 });
     }
-  }, [places]);
+
+    return () => {
+      map.off("popupopen", handlePopupOpen);
+    };
+  }, [onViewDetails, places]);
 
   useEffect(() => {
     const map = mapInstanceRef.current;
@@ -137,11 +158,23 @@ export function MapPanel({ places }) {
         {places.map((place, index) => {
           const distance = distanceInKm(userLocation, place);
           return (
-            <a key={place.id} href={naverSearchUrl(place)} target="_blank" rel="noreferrer">
-              <strong>{index + 1}. {place.name}</strong>
-              <span>{distance ? `${distance.toFixed(1)} km from you` : place.address}</span>
-              <Navigation size={16} />
-            </a>
+            <article key={place.id} className="map-result-card">
+              <img src={place.image} alt={place.name} onError={handlePlaceImageError} />
+              <div>
+                <span className="map-result-index">{index + 1}</span>
+                <p>{place.koreanName}</p>
+                <h3>{place.name}</h3>
+                <small>{distance ? `${distance.toFixed(1)} km from you` : place.address}</small>
+                <div className="map-result-actions">
+                  <button onClick={() => onViewDetails?.(place)}>
+                    <Info size={15} /> Details
+                  </button>
+                  <a href={naverSearchUrl(place)} target="_blank" rel="noreferrer">
+                    <Navigation size={15} /> Naver <ExternalLink size={13} />
+                  </a>
+                </div>
+              </div>
+            </article>
           );
         })}
       </div>

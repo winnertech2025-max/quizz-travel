@@ -28,7 +28,7 @@ export function App() {
 
 function IntroOverlay() {
   return (
-    <div className="intro-overlay" aria-label="Daejeon Discovery intro">
+    <div className="intro-overlay" aria-label="Find Your Daejeon intro">
       <div className="intro-map-lines" />
       <div className="intro-orbit">
         <span />
@@ -36,7 +36,7 @@ function IntroOverlay() {
         <span />
       </div>
       <div className="intro-copy">
-        <p>Daejeon Discovery</p>
+        <p>Find Your Daejeon</p>
         <h1>Find the city that fits your mood.</h1>
       </div>
       <div className="intro-loader">
