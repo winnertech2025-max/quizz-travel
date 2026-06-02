@@ -1,6 +1,7 @@
 const naverQuery = (query) => `https://map.naver.com/p/search/${encodeURIComponent(query)}`;
 const commonsImage = (fileName) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}`;
 const ktoImage = (path) => `https://tong.visitkorea.or.kr/cms/resource/${path}`;
+const localImage = (fileName) => `/places/${fileName}`;
 
 const source = {
   living: "Living in Daejeon",
@@ -192,10 +193,10 @@ export const places = [
     naverUrl: naverQuery("한밭수목원"),
     sourceName: source.wikimedia,
     sourceUrl: "https://en.wikipedia.org/wiki/Daejeon_Hanbat_Arboretum",
-    image: commonsImage("Lydon daejeon-arboretum-lake.jpg"),
+    image: localImage("hanbat-arboretum.png"),
     gallery: [
+      localImage("hanbat-arboretum.png"),
       commonsImage("Lydon daejeon-arboretum-lake.jpg"),
-      commonsImage("Hanbat Treegarden West Lake.JPG"),
       commonsImage("Hanbat Aboretum Garden under the Moon.jpg")
     ],
     description: "Korea's largest manmade urban arboretum, set in the Dunsan area near the Expo and art district.",
@@ -217,7 +218,7 @@ export const places = [
     naverUrl: naverQuery("계족산 황톳길"),
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Gyejoksan",
-    image: commonsImage("Gyejoksan Fortress.jpg"),
+    image: localImage("gyejoksan-forest-walk.png"),
     description: "A forest route around Gyejoksan, best known locally for red-clay walking paths and mountain scenery.",
     details: [
       "Wikimedia Commons identifies Gyejoksan as a mountain in Daejeon and includes Daejeon cityscape and fortress media from the area.",
@@ -287,7 +288,7 @@ export const places = [
     naverUrl: naverQuery("대전둘레산길"),
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Daejeon_Dulesangil",
-    image: commonsImage("Dulesangil Kukan 5 fingerpost.jpg"),
+    image: localImage("daejeon-dullesan-road.png"),
     description: "Living in Daejeon describes Dullesan Road as a walking and hiking trail connecting the mountains surrounding Daejeon.",
     details: [
       "Wikimedia Commons identifies Daejeon Dulesangil as the circular mountain trail around Daejeon.",
@@ -307,7 +308,7 @@ export const places = [
     naverUrl: naverQuery("동춘당"),
     sourceName: source.wikimedia,
     sourceUrl: "https://commons.wikimedia.org/wiki/Category:Dongchundang",
-    image: commonsImage("Dongchundang Daejeon.jpg"),
+    image: localImage("dongchundang.png"),
     description: "Living in Daejeon says Dongchundang was built in the traditional architectural style in the mid-Joseon period.",
     details: [
       "Official category source: Daejeon Attractions, Cultural History.",

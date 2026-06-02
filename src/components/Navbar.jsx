@@ -6,8 +6,7 @@ export function Navbar({ activePage, onNavigate }) {
   const links = [
     { id: "home", label: "Home" },
     { id: "quiz", label: "Quiz" },
-    { id: "about", label: "About" },
-    { id: "contact", label: "Contact" }
+    { id: "about", label: "About" }
   ];
 
   const handleNavigate = (page) => {
@@ -18,7 +17,8 @@ export function Navbar({ activePage, onNavigate }) {
   return (
     <header className="navbar">
       <button className="brand" onClick={() => handleNavigate("home")} aria-label="Go to home">
-        <span className="brand-mark"><Compass size={22} /></span>
+        <img src="./logoKorean.png" style={{width:'14%'}} alt="" />
+        {/* <span className="brand-mark"><Compass size={22} /></span> */}
         <span>
           <strong>Find Your Daejeon</strong>
           <small>Travel quiz for new arrivals</small>

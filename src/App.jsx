@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "./components/Navbar.jsx";
 import { About } from "./pages/About.jsx";
-import { Contact } from "./pages/Contact.jsx";
 import { Home } from "./pages/Home.jsx";
 import { Quiz } from "./pages/Quiz.jsx";
 
@@ -21,7 +20,6 @@ export function App() {
       {page === "home" && <Home onStartQuiz={() => setPage("quiz")} />}
       {page === "quiz" && <Quiz />}
       {page === "about" && <About />}
-      {page === "contact" && <Contact />}
     </>
   );
 }

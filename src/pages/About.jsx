@@ -1,141 +1,76 @@
-import { Brain, CheckCircle2, Code2, Database, Globe2, MapPinned, ShieldCheck, Users } from "lucide-react";
+import { CheckCircle2, Compass, Database, MapPinned, ShieldCheck } from "lucide-react";
 
-const principles = [
-  "Start with a decision, not a search bar.",
-  "Keep the quiz short enough for tired new arrivals.",
-  "Show map context immediately after recommendations.",
-  "Use English-first copy for international students and travelers."
-];
-
-const stack = [
-  { icon: Code2, title: "React + Vite", text: "Component-based frontend with fast local development and production builds." },
-  { icon: Database, title: "JavaScript data files", text: "Quiz questions and Daejeon place data are separated for easier maintenance." },
-  { icon: MapPinned, title: "Interactive map", text: "Leaflet powers pan, zoom, markers, popups, and location context." },
-  { icon: Globe2, title: "Vercel-ready", text: "Static deployment setup supports clean SPA routing." }
+const highlights = [
+  "The website starts with the quiz because new visitors often do not know what to search for yet.",
+  "Each place includes a real map target, coordinates, an image, and a source link.",
+  "The result page connects recommendations to an interactive map and Naver Maps.",
+  "The design is written in English for international students, exchange visitors, and travelers."
 ];
 
 export function About() {
   return (
-    <main className="page-shell">
-      <section className="page-hero about-hero">
-        <p className="eyebrow">About the project</p>
-        <h1>A practical city guide for people who just arrived.</h1>
-        <p>
-          Find Your Daejeon is a React website for a course project. It uses a quiz-based recommendation
-          model to turn vague travel needs into clear places to visit around Daejeon.
-        </p>
-      </section>
+    <main className="page-shell about-document-page">
+      <section className="about-document">
+        <div className="about-document-image">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Expo%20Bridge%20Daejeon%20at%20night.jpg"
+            alt="Expo Bridge in Daejeon at night"
+          />
+        </div>
 
-      <section className="about-intro-grid">
-        <div className="about-lead">
-          <p className="eyebrow">Project purpose</p>
-          <h2>Built for people who arrive first and plan later.</h2>
+        <article className="about-document-content">
+          <p className="eyebrow">About the project</p>
+          <h1>Find Your Daejeon helps new arrivals choose where to go first.</h1>
           <p>
-            Daejeon can feel quiet, spread out, and unfamiliar when someone has just arrived.
-            This website reduces that first-day friction by asking a few human questions:
-            what do you want, who are you with, and how much do you want to spend?
+            Find Your Daejeon is a React website made for a course project about Daejeon, South Korea.
+            Instead of presenting a long static travel list, the website asks a short quiz and turns the
+            user's answers into cafe, food, nature, nightlife, and must-visit recommendations.
           </p>
-        </div>
-        <div className="audience-card">
-          <Users size={28} />
-          <h3>Primary audience</h3>
-          <p>
-            International students, exchange visitors, and travelers who need a quick way to discover
-            cafes, food, nature, nightlife, and must-visit landmarks in Daejeon.
-          </p>
-        </div>
-      </section>
 
-      <section className="content-grid about-checks">
-        {principles.map((item) => (
-          <div className="info-row" key={item}>
-            <CheckCircle2 size={22} />
-            <span>{item}</span>
-          </div>
-        ))}
-      </section>
+          <section>
+            <h2>Project Purpose</h2>
+            <p>
+              The main problem is simple: people who have just arrived in a city often feel unsure about
+              where to go. They may not know local districts, Korean place names, or what keywords to use
+              on a map. This website reduces that friction by guiding the visitor through a friendly
+              decision flow and then showing map-ready results.
+            </p>
+          </section>
 
-      <section className="about-section model-section">
-        <div>
-          <p className="eyebrow">Recommendation model</p>
-          <h2>The quiz is simple on the surface, but structured underneath.</h2>
-          <p>
-            Each answer becomes a signal. The app scores places by category, preference, companion,
-            and budget, then shows the strongest matches first. The result is easy to explain in a
-            classroom presentation and easy to expand later.
-          </p>
-        </div>
-        <div className="model-steps">
-          <article>
-            <span>01</span>
-            <strong>Category</strong>
-            <p>Cafe, Food, Nightlife, Nature, or Must-Visit Daejeon.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <strong>Mood</strong>
-            <p>Study cafe, Korean food, river walk, night views, and more.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <strong>Context</strong>
-            <p>Companion and budget refine the final ranking.</p>
-          </article>
-        </div>
-      </section>
+          <section>
+            <h2>How It Works</h2>
+            <div className="about-document-steps">
+              <div><Compass size={20} /><span>Choose a travel mood such as cafe, food, nature, nightlife, or must-visit.</span></div>
+              <div><CheckCircle2 size={20} /><span>Answer preference, companion, and budget questions.</span></div>
+              <div><MapPinned size={20} /><span>View matching places on an interactive map with Naver links.</span></div>
+            </div>
+          </section>
 
-      <section className="about-section data-section">
-        <div className="data-card">
-          <Brain size={32} />
-          <h2>Why this is more than a static list.</h2>
-          <p>
-            A normal travel page assumes users already know what they want. This project turns uncertainty
-            into interaction, then connects recommendations with map behavior and Naver links.
-          </p>
-        </div>
-        <div className="data-list">
-          <div>
-            <strong>Place data</strong>
-            <span>Name, Korean name, category, tags, address, coordinates, image, and Naver URL.</span>
-          </div>
-          <div>
-            <strong>Quiz data</strong>
-            <span>Centralized question flow for categories, preferences, companions, and budgets.</span>
-          </div>
-          <div>
-            <strong>Map data</strong>
-            <span>Latitude and longitude power marker placement and distance calculations.</span>
-          </div>
-        </div>
-      </section>
+          <section>
+            <h2>Data And Sources</h2>
+            <p>
+              The place data is stored in structured JavaScript files. Each recommendation includes an
+              English name, Korean name, category, tags, address, coordinates, image, Naver Maps link,
+              source website, short description, and detail notes. Tourism information is based on
+              public sources such as Living in Daejeon, VisitKorea, KTourMap, Wikimedia Commons, Naver
+              Maps, and restaurant listing sources.
+            </p>
+            <div className="about-source-list">
+              {highlights.map((item) => (
+                <span key={item}><ShieldCheck size={18} /> {item}</span>
+              ))}
+            </div>
+          </section>
 
-      <section className="about-section stack-section">
-        <div className="section-heading-block">
-          <p className="eyebrow">Technical stack</p>
-          <h2>Organized like a real frontend project.</h2>
-        </div>
-        <div className="stack-grid">
-          {stack.map(({ icon: Icon, title, text }) => (
-            <article key={title}>
-              <Icon size={28} />
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="about-section quality-section">
-        <ShieldCheck size={34} />
-        <div>
-          <p className="eyebrow">Presentation-ready</p>
-          <h2>Clear story, working product, deployable setup.</h2>
-          <p>
-            The site has real navigation, reusable components, structured data, interactive results,
-            responsive styling, and deployment configuration. It is built to feel like a finished course
-            project rather than a quick prototype.
-          </p>
-        </div>
+          <section>
+            <h2>Technical Stack</h2>
+            <div className="about-tech-row">
+              <span><Database size={18} /> React + Vite</span>
+              <span><MapPinned size={18} /> Leaflet map</span>
+              <span><ShieldCheck size={18} /> Vercel-ready SPA</span>
+            </div>
+          </section>
+        </article>
       </section>
     </main>
   );
