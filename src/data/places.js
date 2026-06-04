@@ -66,6 +66,55 @@ export const places = [
     ]
   },
   {
+    id: "merry-carry",
+    name: "Merry Carry",
+    koreanName: "메리캐리",
+    category: "cafe",
+    tags: ["Cozy Cafe", "Photo Cafe", "Dessert Cafe", "Friends", "Partner", "Moderate"],
+    address: "196-14 Jayang-dong, Dong-gu, Daejeon",
+    roadAddress: "80 Baengnyong-ro 5beon-gil, Dong-gu, Daejeon",
+    lat: 36.3395048,
+    lng: 127.449616,
+    naverUrl: "https://naver.me/Fkaax1Rj",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=6Ujr1BiSLL9q",
+    image: "https://d12zq4w4guyljn.cloudfront.net/750_750_20260421121234_photo1_6f86602b0895.webp",
+    gallery: [
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20260421121234_photo1_6f86602b0895.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20260421121234_photo2_6f86602b0895.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20260421121234_photo5_6f86602b0895.webp"
+    ],
+    description: "A real WooSong University area cafe in Jayang-dong, listed by DiningCode with dessert and casual food menu items.",
+    details: [
+      "DiningCode lists Merry Carry at Jayang-dong 196-14 in Dong-gu.",
+      "The source menu includes americano, grapefruit ade, butter rice cake, mushroom open toast, tteokbokki, pasta, and seasonal dessert items.",
+      "Best for a cozy cafe plan with friends or a partner near WooSong University."
+    ]
+  },
+  {
+    id: "cafe-sasohan",
+    name: "Cafe Sasohan",
+    koreanName: "카페사소한",
+    category: "cafe",
+    tags: ["Cozy Cafe", "Study Cafe", "Dessert Cafe", "Alone", "Friends", "Budget-friendly", "Moderate"],
+    address: "114-31 Jayang-dong, Dong-gu, Daejeon",
+    lat: 36.3387,
+    lng: 127.4491,
+    naverUrl: "https://naver.me/GKIIQhAc",
+    sourceName: source.naver,
+    sourceUrl: "https://naver.me/GKIIQhAc",
+    image: "https://ssl.pstatic.net/static/maps/assets/images/og-map-400x200.png",
+    gallery: [
+      "https://ssl.pstatic.net/static/maps/assets/images/og-map-400x200.png"
+    ],
+    description: "A Naver Maps-listed small cafe in Jayang-dong near WooSong University, added from the project brief's exact map link.",
+    details: [
+      "The project brief provides the exact Naver Maps entry at Jayang-dong 114-31 in Dong-gu.",
+      "Use this as a calm cafe pick when the user wants a small local stop rather than a large franchise.",
+      "Open Naver Maps before visiting to confirm current photos, hours, and route details."
+    ]
+  },
+  {
     id: "hongduggaekalguksu",
     name: "Hongduggaekalguksu",
     koreanName: "홍두깨칼국수",
@@ -116,6 +165,55 @@ export const places = [
       "DiningCode lists Uccine Kitchen as a shabu-shabu and mushroom restaurant.",
       "Menu examples from the source include mushroom beef shabu, vegetable beef shabu, and kalguksu add-on.",
       "It works best for family or partner meals near the Bomunsan route."
+    ]
+  },
+  {
+    id: "yangmimi",
+    name: "Yangmimi",
+    koreanName: "양미미",
+    category: "food",
+    tags: ["International Food", "Korean Food", "Friends", "Family", "Moderate", "Premium"],
+    address: "1-31 Munhwa-dong, Jung-gu, Daejeon",
+    roadAddress: "922 Gyeryong-ro, Jung-gu, Daejeon",
+    lat: 36.319508,
+    lng: 127.4148745,
+    naverUrl: "https://naver.me/5yhhSuZ1",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=AQZ30tQ8P2T3",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=AQZ30tQ8P2T3",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=AQZ30tQ8P2T3"
+    ],
+    description: "A real Munhwa-dong lamb restaurant matched by DiningCode to the exact address from the project brief.",
+    details: [
+      "DiningCode lists Yangmimi at Munhwa-dong 1-31 in Jung-gu and categorizes it as lamb and meat restaurant.",
+      "Menu examples from the source include lamb ribs, lamb sirloin, French rack, wagyu rib finger meat, special sets, and Yangmimi signature soba.",
+      "Best for friends or family who want a heavier dinner option instead of a quick student meal."
+    ]
+  },
+  {
+    id: "sannae-gamjatang",
+    name: "Sannae Tteukkeuni Gamjatang",
+    koreanName: "산내뜨끈이감자탕",
+    category: "food",
+    tags: ["Korean Food", "Late-night Food", "Friends", "Family", "Budget-friendly", "Moderate"],
+    address: "8-8 Seokgyo-dong, Jung-gu, Daejeon",
+    roadAddress: "249 Daejong-ro, Jung-gu, Daejeon",
+    lat: 36.310384,
+    lng: 127.4400281,
+    naverUrl: "https://naver.me/5ajj24pI",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=UtEnbRoADo1l",
+    image: "https://d12zq4w4guyljn.cloudfront.net/750_750_20250724043607018_photo_e0350b891b4c.webp",
+    gallery: [
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20250724043607018_photo_e0350b891b4c.webp",
+      "https://d12zq4w4guyljn.cloudfront.net/750_750_20250724043941763_photo_e0350b891b4c.webp"
+    ],
+    description: "A Seokgyo-dong gamjatang and pork bone hangover soup restaurant verified against the exact project address.",
+    details: [
+      "DiningCode lists Sannae Tteukkeuni Gamjatang at Seokgyo-dong 8-8 in Jung-gu.",
+      "The source categorizes the restaurant as gamjatang and pork bone hangover soup.",
+      "It fits Korean food, late-night style meals, and budget-to-moderate group dining."
     ]
   },
   {
@@ -392,7 +490,7 @@ export const places = [
     address: "Jungang-ro area, Jung-gu, Daejeon",
     lat: 36.3272,
     lng: 127.4276,
-    naverUrl: naverQuery("으능정이문화의거리"),
+    naverUrl: "https://naver.me/xJccoR2t",
     sourceName: source.visitKorea,
     sourceUrl: "https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=82410",
     image: ktoImage("55/3526655_image2_1.jpg"),
@@ -501,6 +599,149 @@ export const places = [
       "DiningCode lists EL Mariachi at Gung-dong 405-20 in Yuseong-gu.",
       "The source categorizes it as a cocktail and cocktail bar spot, with hours from 20:00 to 02:00 on weekdays and later weekend hours.",
       "Best for users who choose Cocktail & Lounge or Casual Drinks rather than a sightseeing-only night route."
+    ]
+  },
+  {
+    id: "limbus-lounge",
+    name: "Limbus Lounge",
+    koreanName: "림버스라운지",
+    category: "nightlife",
+    tags: ["Cocktail & Lounge", "Casual Drinks", "Friends", "Partner", "Moderate", "Premium"],
+    address: "1049 Dunsan-dong, Seo-gu, Daejeon",
+    roadAddress: "5F, 32-29 Dunsan-ro, Seo-gu, Daejeon",
+    lat: 36.3504465,
+    lng: 127.3769104,
+    naverUrl: "https://naver.me/GArrfpfq",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=iLmSuiK0fqO1",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=iLmSuiK0fqO1",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=iLmSuiK0fqO1"
+    ],
+    description: "A verified Dunsan-dong cocktail and champagne lounge for users who want a real bar-style nightlife route.",
+    details: [
+      "DiningCode lists Limbus Lounge at Dunsan-dong 1049 in Seo-gu.",
+      "The source menu includes champagne bottle options, Limbus 6 shots, Valentine Martini, Sakura, and other cocktails.",
+      "DiningCode lists late evening opening hours, including 19:00-05:00 on Friday and 19:00-06:00 on Saturday."
+    ]
+  },
+  {
+    id: "perito-lounge",
+    name: "Perito Lounge",
+    koreanName: "페리토라운지",
+    category: "nightlife",
+    tags: ["Cocktail & Lounge", "Casual Drinks", "Friends", "Partner", "Moderate", "Premium"],
+    address: "475-1 Daeheung-dong, Jung-gu, Daejeon",
+    roadAddress: "2F, 33 Bomun-ro 254beon-gil, Jung-gu, Daejeon",
+    lat: 36.3260142,
+    lng: 127.423904,
+    naverUrl: "https://naver.me/xaTTu0LD",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=P4ncf2auMzrI",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=P4ncf2auMzrI",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=P4ncf2auMzrI"
+    ],
+    description: "A Daeheung-dong jazz bar and lounge matched to the user's exact Naver Maps link.",
+    details: [
+      "DiningCode lists Perito Lounge at Daeheung-dong 475-1 in Jung-gu.",
+      "The source categorizes it as a jazz bar and jazz performance venue.",
+      "Menu examples from the source include melon prosciutto and whisky, making it a better match for Cocktail & Lounge than sightseeing nightlife."
+    ]
+  },
+  {
+    id: "million-malt",
+    name: "Million Malt",
+    koreanName: "밀리언몰트",
+    category: "nightlife",
+    tags: ["Cocktail & Lounge", "Casual Drinks", "Friends", "Partner", "Moderate", "Premium"],
+    address: "4-9 Doryong-dong, Yuseong-gu, Daejeon",
+    roadAddress: "E123-E124, 19 Expo-ro 151beon-gil, Yuseong-gu, Daejeon",
+    lat: 36.3761486,
+    lng: 127.3953841,
+    naverUrl: "https://naver.me/xqbbCNYg",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=VqhbGhHQbK1O",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=VqhbGhHQbK1O",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=VqhbGhHQbK1O"
+    ],
+    description: "A verified Doryong-dong whisky bar in the Expo/Smart City area, useful for a premium evening plan.",
+    details: [
+      "DiningCode lists Million Malt at Doryong-dong 4-9 in Yuseong-gu.",
+      "The source categorizes it as whisky and whisky bar.",
+      "Menu examples include whisky, wine, truffle octopus steak, squid gambas, pasta, Guinness, and bottled beer."
+    ]
+  },
+  {
+    id: "myowol",
+    name: "Myowol",
+    koreanName: "묘월",
+    category: "nightlife",
+    tags: ["Cocktail & Lounge", "Casual Drinks", "Alone", "Friends", "Partner", "Moderate", "Premium"],
+    address: "937 Tanbang-dong, Seo-gu, Daejeon",
+    roadAddress: "102, 39 Munjeong-ro 132beon-gil, Seo-gu, Daejeon",
+    lat: 36.3448169,
+    lng: 127.3941173,
+    naverUrl: "https://naver.me/xQJJM05e",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=HI4g5UQ933rS",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=HI4g5UQ933rS",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=HI4g5UQ933rS"
+    ],
+    description: "A Tanbang-dong cocktail bar verified by DiningCode, suitable for a quieter bar plan.",
+    details: [
+      "DiningCode lists Myowol at Tanbang-dong 937, room 102, in Seo-gu.",
+      "The source categorizes it as a cocktail and cocktail bar spot.",
+      "DiningCode lists daily hours from 20:00 to 04:00, so it fits late-night recommendations."
+    ]
+  },
+  {
+    id: "bar-credit",
+    name: "Bar Credit",
+    koreanName: "바 크레딧",
+    category: "nightlife",
+    tags: ["Cocktail & Lounge", "Casual Drinks", "Friends", "Partner", "Moderate", "Premium"],
+    address: "890 Tanbang-dong, Seo-gu, Daejeon",
+    roadAddress: "1F, 34 Munjeong-ro 122beon-gil, Seo-gu, Daejeon",
+    lat: 36.345137,
+    lng: 127.3927047,
+    naverUrl: "https://naver.me/G3vvuELz",
+    sourceName: source.dining,
+    sourceUrl: "https://www.diningcode.com/profile.php?rid=r2nbLikCngYM",
+    image: "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=r2nbLikCngYM",
+    gallery: [
+      "https://dfzrjox9sv97l.cloudfront.net/new/images/web/common/rest_main_photo.jpg?rest=r2nbLikCngYM"
+    ],
+    description: "A Tanbang-dong cocktail bar with a movie-themed cocktail menu, added from the user's exact Naver Maps link.",
+    details: [
+      "DiningCode lists Bar Credit at Tanbang-dong 890 in Seo-gu.",
+      "The source menu includes Director, Starring, Supporting Actor, Staff, Cameo, whisky, cocktails, and caprese.",
+      "Best for users who choose Cocktail & Lounge and want a bar rather than a city-light walk."
+    ]
+  },
+  {
+    id: "pompeii-karaoke",
+    name: "Pompeii Karaoke",
+    koreanName: "폼페이 노래연습장",
+    category: "nightlife",
+    tags: ["Karaoke Night", "Friends", "Partner", "Budget-friendly", "Moderate"],
+    address: "538-16 Bongmyeong-dong, Yuseong-gu, Daejeon",
+    lat: 36.3548,
+    lng: 127.3446,
+    naverUrl: "https://naver.me/GO66L9Xc",
+    sourceName: source.naver,
+    sourceUrl: "https://naver.me/GO66L9Xc",
+    image: "https://ssl.pstatic.net/static/maps/assets/images/og-map-400x200.png",
+    gallery: [
+      "https://ssl.pstatic.net/static/maps/assets/images/og-map-400x200.png"
+    ],
+    description: "A Naver Maps-listed karaoke room in Bongmyeong-dong, added as a real Karaoke Night option for the nightlife quiz.",
+    details: [
+      "The project brief provides the exact Naver Maps entry at Bongmyeong-dong 538-16 in Yuseong-gu.",
+      "Use this when the quiz answer is Karaoke Night instead of cocktail lounge or night walk.",
+      "Open Naver Maps for current room details, route, and live listing information before visiting."
     ]
   },
   {
