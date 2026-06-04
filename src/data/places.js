@@ -6,6 +6,7 @@ const localImage = (fileName) => `/places/${fileName}`;
 const source = {
   living: "Living in Daejeon",
   dining: "DiningCode",
+  triple: "Triple",
   naver: "Naver Maps",
   ktour: "KTourMap / VisitKorea",
   visitKorea: "VisitKorea",
@@ -98,20 +99,23 @@ export const places = [
     category: "cafe",
     tags: ["Cozy Cafe", "Study Cafe", "Dessert Cafe", "Alone", "Friends", "Budget-friendly", "Moderate"],
     address: "114-31 Jayang-dong, Dong-gu, Daejeon",
-    lat: 36.3387,
-    lng: 127.4491,
+    roadAddress: "19 Baengnyong-ro 38beon-gil, Dong-gu, Daejeon",
+    lat: 36.3339951,
+    lng: 127.4499182,
     naverUrl: "https://naver.me/GKIIQhAc",
-    sourceName: source.naver,
-    sourceUrl: "https://naver.me/GKIIQhAc",
-    image: "https://ssl.pstatic.net/static/maps/assets/images/og-map-400x200.png",
+    sourceName: source.triple,
+    sourceUrl: "https://triple.guide/restaurants/924a031b-1c22-4d90-8ec3-3e84fc4b56ae",
+    image: "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/a2d7c9d8-4bce-49f1-8a20-83f97ee8d260.jpeg",
     gallery: [
-      "https://ssl.pstatic.net/static/maps/assets/images/og-map-400x200.png"
+      "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/a2d7c9d8-4bce-49f1-8a20-83f97ee8d260.jpeg",
+      "https://blogthumb.pstatic.net/MjAyMjAyMDFfMjAw/MDAxNjQzNzIzNTc4NDQ1.j9VZLvpkggWZilMabkcQb7MNPBKZJOV9wQG0cM2Dxjgg.1xkwt-Wm-E9RUiHb2YyQziMBF8pvdeN5MjVi7US5XkEg.JPEG.cvcv5552/20210329_191512.jpg?type=w2",
+      "https://blogthumb.pstatic.net/MjAyMTEyMjdfODYg/MDAxNjQwNTkxNjA5NjYy.oXMii0oB9tcN5jMSjgECCB3S5H8JMt_2oWcVOVfAzpMg.lMPC2tacJ7JAvcAKOaTrGfGe_xLqav60chZkt84YKcAg.JPEG.gogoitis/IMG_6748.jpg?type=w2"
     ],
-    description: "A Naver Maps-listed small cafe in Jayang-dong near WooSong University, added from the project brief's exact map link.",
+    description: "A warm, modest Jayang-dong cafe where visitors can enjoy chewy dango grilled over a small brazier with coffee, tea, and desserts.",
     details: [
-      "The project brief provides the exact Naver Maps entry at Jayang-dong 114-31 in Dong-gu.",
-      "Use this as a calm cafe pick when the user wants a small local stop rather than a large franchise.",
-      "Open Naver Maps before visiting to confirm current photos, hours, and route details."
+      "Triple lists Cafe Sasohan in Dong-gu and describes it as a cozy cafe with grilled dango, coffee, tea, and dessert.",
+      "Triple lists the road address as 19 Baengnyong-ro 38beon-gil and the phone number as +82-42-348-1844.",
+      "The source lists weekday hours around 11:30-21:00 and shorter weekend hours, but users should still confirm live hours on Naver Maps."
     ]
   },
   {
